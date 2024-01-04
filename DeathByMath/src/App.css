@@ -11,3 +11,8 @@
   color: white;
   text-decoration: none;
 }
+
+.videoContainer {
+  height: 5%;
+  width: 5%;
+}

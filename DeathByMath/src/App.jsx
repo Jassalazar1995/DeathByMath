@@ -17,8 +17,8 @@ function App() {
 
     <Routes>
       <Route path='/' element={<Main />} />
-      <Route path='/' element={<DifferentialGeometry />} />
-      <Route path='/' element={<FunctionalAnalysis />} />
+      <Route path='/DiffGeo' element={<DifferentialGeometry />} />
+      <Route path='/Funanal' element={<FunctionalAnalysis />} />
     </Routes>
     Hello World!
     </>

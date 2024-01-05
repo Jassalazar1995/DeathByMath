@@ -16,3 +16,23 @@
   height: 5%;
   width: 5%;
 }
+
+.chapters-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* two columns */
+  gap: 20px; /* space between grid items */
+  margin: 20px 0;
+}
+
+.chapter {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center items vertically in each chapter */
+}
+
+.chapter-image {
+  width: 70%; /* make images fill the container */
+  height: 600px; /* fixed height for images */
+  object-fit: cover; /* maintain aspect ratio without distorting the image */
+  border-radius: 10px; /* optional, for rounded corners */
+}

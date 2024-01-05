@@ -1,0 +1,1 @@
+// Sets up the Redux store to use the reducer

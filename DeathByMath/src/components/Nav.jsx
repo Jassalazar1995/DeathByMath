@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import PomodoroClock from "./PomodoroClock";
+
 
 export default function Nav() {
     return (
@@ -15,6 +17,7 @@ export default function Nav() {
             <Link to='/Pomodoro'>
                 <div>Pomodoro Clock</div>
             </Link>
+            <PomodoroClock />
         </div>
     )
 }

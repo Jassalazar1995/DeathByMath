@@ -36,3 +36,19 @@
   object-fit: cover; /* maintain aspect ratio without distorting the image */
   border-radius: 10px; /* optional, for rounded corners */
 }
+
+.pomodoro-clock {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.pomodoro-timer {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+.pomodoro-controls button {
+  margin: 5px;
+  padding: 5px 10px;
+  font-size: 0.8em;
+}

@@ -28,10 +28,9 @@ export default function FunctionalAnalysis() {
                 {chapters.map((chapter, index) => (
                     <div className="chapter" key={index}>
                         <Link to ={chapter.path}>
-                        <img src={chapter.image} alt={`Image for ${chapter.title}`} className="chapter-image" />
+                            <img src={chapter.image} alt={`Image for ${chapter.title}`} className="chapter-image" />
+                            <h2>{chapter.title}</h2>
                         </Link>
-                        <h2>{chapter.title}</h2>
-                        <p>{chapter.content}</p>
                     </div>
                 ))}
             </div>

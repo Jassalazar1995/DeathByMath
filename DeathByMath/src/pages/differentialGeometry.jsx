@@ -9,13 +9,13 @@ export default function DifferentialGeometry() {
     useEffect(() => {
         const fetchChapters = async () => {
             const fetchedChapters = [
-                { title: 'Multivariable Calculus', content: 'Content for Multivariable Calculus', image: './images/diffgeo/MultiCalc.jpg', path: './diffGeoChapters/' },
-                { title: 'Forms', content: 'Content for Forms', image: './images/diffgeo/Forms.png', path: './diffGeoChapters/' },
-                { title: 'Differential Forms', content: 'Content for Differential Forms', image: './images/diffgeo/DifferentialForms.jpg', path: './diffGeoChapters/' },
-                { title: 'Differentiation of Differential Forms', content: 'Content for Differentiation of...', image: './images/diffgeo/DiffofDiffForms.png', path: './diffGeoChapters/' },
-                { title: 'Stokes Theorem', content: 'Content for Stokes Theorem', image: './images/diffgeo/Stokes.png', path: './diffGeoChapters/' },
-                { title: 'Manifolds', content: 'Content for Manifolds', image: './images/diffgeo/Manifolds.png', path: './diffGeoChapters/' },
-                { title: 'Differential Geometry via Differential Forms', content: 'Content for Differential Geometry via Differential Forms', image: './images/diffgeo/DiffGeo.png', path: './diffGeoChapters/' },
+                { title: 'Multivariable Calculus', content: 'Content for Multivariable Calculus', image: './images/diffgeo/MultiCalc.jpg', path: './diffGeoChapters/MultiCalc' },
+                { title: 'Forms', content: 'Content for Forms', image: './images/diffgeo/Forms.png', path: './diffGeoChapters/forms' },
+                { title: 'Differential Forms', content: 'Content for Differential Forms', image: './images/diffgeo/DifferentialForms.jpg', path: './diffGeoChapters/diffForms' },
+                { title: 'Differentiation of Differential Forms', content: 'Content for Differentiation of...', image: './images/diffgeo/DiffofDiffForms.png', path: './diffGeoChapters/diffOfDiffForms' },
+                { title: 'Stokes Theorem', content: 'Content for Stokes Theorem', image: './images/diffgeo/Stokes.png', path: './diffGeoChapters/stokes' },
+                { title: 'Manifolds', content: 'Content for Manifolds', image: './images/diffgeo/Manifolds.png', path: './diffGeoChapters/manifolds' },
+                { title: 'Differential Geometry via Differential Forms', content: 'Content for Differential Geometry via Differential Forms', image: './images/diffgeo/DiffGeo.png', path: './diffGeoChapters/diffGeoDiffForms' },
             ];
             setChapters(fetchedChapters);
         };
@@ -29,11 +29,10 @@ export default function DifferentialGeometry() {
             <div className="chapters-container">
                 {chapters.map((chapter, index) => (
                     <div className="chapter" key={index}>
-                        <Link>
-                        <img src={chapter.image} alt={`Image for ${chapter.title}`} className="chapter-image" />
+                        <Link to ={chapter.path}>
+                            <img src={chapter.image} alt={`Image for ${chapter.title}`} className="chapter-image" />
+                            <h2>{chapter.title}</h2>
                         </Link>
-                        <h2>{chapter.title}</h2>
-                        <p>{chapter.content}</p>
                     </div>
                 ))}
             </div>

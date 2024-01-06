@@ -14,9 +14,6 @@ export default function Nav() {
             <Link to='/DiffGeo'>
                 <div>Differential Geometry</div>
             </Link>
-            <Link to='/Pomodoro'>
-                <div>Pomodoro Clock</div>
-            </Link>
             <PomodoroClock />
         </div>
     )

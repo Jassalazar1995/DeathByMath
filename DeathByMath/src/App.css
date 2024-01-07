@@ -58,18 +58,41 @@
 }
 
 .sidebar {
-  width: 250px; 
-  background-color: blue;
-  
+  width: 250px;
+  position: relative; /* Added for positioning toggle button */
 }
 
-.sidebar.hidden {
+/* Styling for the content inside the sidebar */
+.sidebar .sidebar-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: red;
+}
+
+/* Styling for the toggle button */
+.toggle-button {
+  position: absolute; /* Position it relative to the sidebar */
+  top: 0;
+  left: 100%; /* Place it to the right of the sidebar content */
+  transform: translateX(-100%); /* Align it with the sidebar edge */
+  background-color: #f0f0f0;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.sidebar.hidden .sidebar-content {
   width: 0;
   overflow: hidden;
+}
+
+.sidebar.hidden .toggle-button {
+  left: 0;
+  transform: none; /* Reset transform when sidebar is hidden */
 }
 
 .content {
   flex-grow: 1;
   padding: 20px;
-  
 }

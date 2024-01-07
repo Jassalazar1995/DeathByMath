@@ -58,8 +58,9 @@
 }
 
 .sidebar {
-  width: 250px; /* Adjust as needed */
-  /* additional styling */
+  width: 250px; 
+  background-color: blue;
+  
 }
 
 .sidebar.hidden {
@@ -70,5 +71,5 @@
 .content {
   flex-grow: 1;
   padding: 20px;
-  /* additional styling for centered and neat content */
+  
 }

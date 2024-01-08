@@ -4,7 +4,7 @@ import Sidebar from '../../components/SideBar';
 
 const ChapterPage = () => {
     const { id } = useParams(); // Get the chapter id from the URL parameter using useParams hook
-    const chapterId = id; // If you want to keep using chapterId in your code
+    const chapterId = id; // If I want to keep using chapterId in your code
     const subsections = []; // Define subsections for this chapter
 
 

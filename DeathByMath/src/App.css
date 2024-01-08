@@ -5,6 +5,8 @@
   color: white;
   padding: 15px;
   font-size: 2em;
+  position: relative; /* This ensures that z-index is respected */
+  z-index: 100; /* Higher z-index so that the nav is above the sidebar */
 }
 
 .nav a {
@@ -55,44 +57,77 @@
 
 .chapter-page {
   display: flex;
+  height: 100vh;
+  margin-left: 10px;
 }
 
 .sidebar {
   width: 250px;
-  position: relative; /* Added for positioning toggle button */
+  background-color: blue;
+  position: fixed;
+  top: 180px; /* Adjusted to account for actual nav height including padding */
+  left: 0;
+  bottom: 20px;
+  padding-left: 30px;
+  overflow-y: auto;
+  z-index: 10; /* Lower than nav but high enough to be above other content */
+  transition: width 0.3s; /* Smooth transition for the sidebar width */
 }
 
 /* Styling for the content inside the sidebar */
 .sidebar .sidebar-content {
-  width: 100%;
   display: flex;
   flex-direction: column;
-  background-color: red;
+  color: white;
+  height: 80vh; /* 100% of the viewport height minus the height of the nav bar */
 }
 
 /* Styling for the toggle button */
 .toggle-button {
-  position: absolute; /* Position it relative to the sidebar */
-  top: 0;
-  left: 100%; /* Place it to the right of the sidebar content */
-  transform: translateX(-100%); /* Align it with the sidebar edge */
-  background-color: #f0f0f0;
+  position: fixed; /* Use fixed instead of absolute */
+  top: 180px; /* Same as the sidebar's top value */
+  left: 10px; /* Start at the left edge */
+  bottom: 10px;
+  width: 1px; /* Or whatever width you prefer */
+  height: 100vh; /* Height can be adjusted as needed */
+  background-color: blue;
   border: none;
   padding: 10px;
   cursor: pointer;
+  z-index: 0; /* Ensure the button is above other content */
+  transition: left 0.3s; /* Smooth transition for the button */
+  color: white;
+}
+
+/* When the sidebar is hidden, we now adjust the width of the sidebar itself */
+.sidebar.hidden {
+  width: 0; /* Set the width of the sidebar itself to 0 */
+  overflow: hidden;
 }
 
 .sidebar.hidden .sidebar-content {
   width: 0;
   overflow: hidden;
+  display: none; /* Hide the sidebar content when sidebar is hidden */
 }
 
 .sidebar.hidden .toggle-button {
-  left: 0;
-  transform: none; /* Reset transform when sidebar is hidden */
+  left: 0px; /* Adjust so only part of the button is visible */
+  bottom: 10px;
+  height: 100vh;
+  background-color: blue; /* Change if you want a different color when hidden */
 }
 
 .content {
+  transition: margin-left 0.3s; /* Smooth transition for the margin */
+  margin-left: 260px; /* Make room for the sidebar */
   flex-grow: 1;
   padding: 20px;
+  
+}
+
+/* Adjust the margin when sidebar is hidden */
+.sidebar.hidden + .content {
+  margin-left: 0;
+  
 }

@@ -9,7 +9,7 @@ import PomodoroClock from './components/PomodoroClock';
 import ChapterPage from './pages/funanalChapters/spaces';
 
 function App() {
-    const [count, setCount] = useState(0);
+
 
     return (
         <>
